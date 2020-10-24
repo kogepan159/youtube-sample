@@ -1,28 +1,42 @@
-// 46日目 自動販売機(お釣り枚数)
-// 45日目の正解は「5」でした
-import UIKit
+// 【映画館編】
+// 今回は割引券なしで、鬼滅の刃の映画感に行ったとしましょう！
+// 大人2人、子供2人で見に行った時の料金を求めていきます〜〜
+// 料金(大人: 1500円 子供: 800円)
+// 割引券ある場合は、2割引とする
 
+// 準備段階
+// 大人2名
+// 子供2名
+// 大人料金 1500円
+// 子供料金 800円
+// 割引券 なし
+// 割引率あった場合 20% = 0.2
 
-class VendingMachine {
-    let coinPriceList: [Int] = [500,100,50,10]
-    func changeCoinCount(inputMoney: Int, buyMoney: Int) -> Int {
-        var coin: Int = 0
-        var balance: Int = inputMoney - buyMoney
-        if inputMoney < buyMoney {
-            print("買えませんでした。")
-            return coin
-        }
-        balance = balance%1000
-        
-        for coinPrice in coinPriceList {
-            if balance/coinPrice > 0 {
-                coin = coin + balance/coinPrice
-                balance = balance%coinPrice
-            }
-        }
-        return coin
-    
-    }
+// 日本語で実装
+// 大人人数 = 2
+// 子供人数 = 2
+// 大人料金 = 1500
+// 子供料金 = 800
+// 割引券 = ない
+// 割引率 = 0.2
+// 合計料金 = 大人人数 * 大人料金 + 子供人数 * 子供料金
+//
+// 割引券がある場合
+//   合計料金 = 合計料金 * (1 - 割引率)
+//
+// 合計金額を出力する
+
+// プログラム言語で実装
+let otona_ninzuu:Int = 2
+let kodomo_ninzuu:Int = 2
+let otona_ryoukin: Int = 1500
+let kodomo_ryoukin: Int = 800
+var goukei_ryoukin: Int = otona_ninzuu * otona_ryoukin + kodomo_ninzuu * kodomo_ryoukin
+let waribikiken: Bool = false
+let waribiki_ritu: Double = 0.2
+
+if waribikiken {
+    goukei_ryoukin = goukei_ryoukin * Int((1.0 - waribiki_ritu))
 }
-let price: VendingMachine = VendingMachine()
-print(price.changeCoinCount(inputMoney: 1000, buyMoney: 460))
+
+print(goukei_ryoukin)
