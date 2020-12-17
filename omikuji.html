@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>おみくじ</title>
+    <img src="omikuji_img/omikuji_box.png" alt=""　id="PhotoSpace">
+  </head>
+  <body>
+    <input id="omikuji_btn" type="button" value="おみくじを引く">
+    <script>
+    document.getElementById("omikuji_btn").onclick = function() {
+      var rnd = Math.floor(Math.random()*4);
+      console.log(rnd);
+      var omikuji;
+      switch (rnd) {
+        case 0:
+          omikuji = "大吉";
+          break;
+        case 1:
+          omikuji = "中吉";
+          break;
+        case 2:
+          omikuji = "小吉";
+          break;
+        case 3:
+          omikuji = "凶";
+          break;
+        case 4:
+         omikuji = "大凶";
+          break;
+
+          break;
+        default:
+        　omikuji = "エラー";
+
+      }
+      alert(omikuji);
+    }
+
+    </script>
+
+  </body>
+</html>
