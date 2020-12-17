@@ -11,38 +11,27 @@
     document.getElementById("omikuji_btn").onclick = function() {
       var rand = Math.floor(Math.random()*5);
       console.log(rand);
-      var omikuji;
       switch (rand) {
         case 0:
-          omikuji = "大吉";
           document.getElementById('result').src='omikuji_img/omikuji_daikichi.png';
           break;
         case 1:
-          omikuji = "中吉";
           document.getElementById('result').src='omikuji_img/omikuji_chuukichi.png';
           break;
         case 2:
-          omikuji = "小吉";
           document.getElementById('result').src='omikuji_img/omikuji_syoukichi.png';
           break;
         case 3:
-          omikuji = "凶";
           document.getElementById('result').src='omikuji_img/omikuji_kyou.png';
           break;
         case 4:
-         omikuji = "大凶";
-         document.getElementById('result').src='omikuji_img/omikuji_daikou.png';
-          break;
-
+         document.getElementById('result').src='omikuji_img/omikuji_daikyou.png';
           break;
         default:
-        　omikuji = "エラー";
-
+          console.log("エラー")
+          break;
       }
-      alert(omikuji);
     }
-
     </script>
-
   </body>
 </html>
